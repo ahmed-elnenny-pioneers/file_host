@@ -2163,6 +2163,39 @@ and FormName = '" + _formName + @"'");
             {
             }
         }
+        // Helper for showing a message and clearing/focusing a textbox (used in textBox13_Leave and similar places)
+        private void ShowMessageAndResetTextBox(string message, TextBox textBox)
+        {
+            MessageBox.Show(message);
+            textBox.Clear();
+            textBox.Focus();
+        }
+
+        private void SetTextBoxEnabled(TextBox textBox, bool enabled)
+        {
+            textBox.Enabled = enabled;
+        }
+
+        private void SetTextBoxText(TextBox textBox, string text)
+        {
+            textBox.Text = text;
+        }
+
+        private void SetControlVisible(Control control, bool visible)
+        {
+            control.Visible = visible;
+        }
+
+        private void SetControlSize(Control control, int width, int height)
+        {
+            control.Size = new System.Drawing.Size(width, height);
+        }
+
+        private void SetControlFocus(Control control)
+        {
+            control.Focus();
+        }
+
         // نفدى أم آجل
         private void SetPayTypeSettings()
         {
